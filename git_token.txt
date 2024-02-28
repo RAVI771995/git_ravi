@@ -1,0 +1,32 @@
+-------111----------------GIT HUB------------------------------------
+USERNAME RAVI771995
+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
+-------------------------------------------------1111--------------------
+
+
+
+--------222--------------------bitbucket token bit_2key------------------------------
+ATCTT3xFfGN0UvHKKYCg0IFaENZuwWkti8jnXfc5iSfSXLNJkldXsZNk5TfZx2Z_Jb7zO2b26KIBb_wPEHf5kqnRU-ngb2ts3d2HVna5TaLF2L2caYvfHsoGbRn1LMvuvQd-CAm7-_KpHRAPyLm_GMh9FYgCBLoBC0YAXuYP7Bu1E1gkAkkuGNE=32EA7CBC
+----------------------------------------------------------------------222-----------------------
+
+-------333----------------git repository link  for working and practising-----------------------
+https://github.com/DeepakPrabakar/unix-linux-interview-questions?tab=readme-ov-file#5-delete-files-of-size-more-than-100mb-in-a-folder-which-are-older-than-90-days
+----------------------------------------------------------------------------333-----------------------
+
+-------444---------------------------To create new project --------------------------------------
+
+Using an Archetype
+To create a new project based on an Archetype, you need to call mvn archetype:generate goal, like the following:
+
+mvn archetype:generate
+-----------------------------------------------------------------444------------------------------
+
+
+=======555===========jenkins: local host : 8080 : password==============================================
+
+                         6558f1b4f821456cb7e1face54f0a2be
+======================================================================================================
+
+
+
+
