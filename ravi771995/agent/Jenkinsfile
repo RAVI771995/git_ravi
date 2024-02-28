@@ -38,7 +38,7 @@ pipeline {
 
         stage('TEST MULTIPLE') {
             parallel {
-                stage('Test01') {
+                stage('Test1') {
                     when {
                         expression {
                             params.TEST == true
@@ -54,7 +54,7 @@ pipeline {
                     }
                 }
 
-                stage('Test02') {
+                stage('Test2') {
                     when {
                         expression {
                             params.TEST == true
