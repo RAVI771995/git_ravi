@@ -42,13 +42,7 @@ pipeline {
                     echo "$USER  $SSH_key"
                      ''' 
                 }
-                sshgent (credentials :['SSH_PEM']) {
-
-                    sh '''
-                    ls -lrt 
-                    echo "startedt the server"
-                    '''
-                }
+                
 
                
 
