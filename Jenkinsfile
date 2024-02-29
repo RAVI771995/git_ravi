@@ -42,7 +42,7 @@ pipeline {
                     echo "$USER  $SSH_key"
                      ''' 
                 }
-                sshgent (credentials :['ssh-credentials-id']) {
+                sshgent (credentials :['SSH_PEM']) {
 
                     sh '''
                     ls -lrt 
