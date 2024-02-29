@@ -17,9 +17,9 @@ pipeline {
                 //This is accessing credential of type Secrete text 
                  
                     withCredentials([string(credentialsId: 'Secrete_text', variable:'secret_text')]) {
-                        echo "$secrete_text"
+                        echo "$secret_text"
                         sh '''
-                           echo "$secrete_text"
+                           echo "$secret_text"
                         '''
                     }
                  
