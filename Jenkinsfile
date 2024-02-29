@@ -17,12 +17,7 @@ pipeline {
                 // Second credential (SEcreete text)
                 //This is accessing credential of type Secrete text 
 
-                 withCredentials(string[(credentialsId: 'Secrete_text', variable: 'SECRET_TEXT')]) {
-                   echo "$SECRET_TEXT"
-                    sh '''
-                    echo "$SECRET_TEXT"
-                     '''                       
-                }
+                 
 
                   //third credential (SECRETE file)
                   //This is accessing credential of type Secrete file 
