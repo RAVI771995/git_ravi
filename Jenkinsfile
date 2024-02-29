@@ -1,41 +1,47 @@
+
 pipeline {
     agent any
 
     stages {
         stage('CREDS') {
             steps {
-               // This is accessing credential of type username and password
-               withCredentials([usernamePassword(credentialsId: 'test_up', usernameVariable: 'USERNAME', passwordVariable: 'PASS')]) {
-                    echo "$USERNAME $PASS"
+                  // First credential (USERNAMe & Password)
+                  // This is accessing credential of type username and password
+                 withCredentials(string[(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
+                   echo "$USER_NAME $PASS"
                     sh '''
-                        echo "$USERNAME $PASS"
+                        echo "$USER_NAME $PASS"
                     '''
-               }
+                }
+                // Second credential (SEcreete text)
+                //This is accessing credential of type Secrete text 
 
-                // This is accessing credential of type secret text
-                withCredentials([string(credentialsId: 'Secrete_text', variable: 'SECRET_TEXT')]) {
-                    echo "$SECRET_TEXT"
-                    sh '''
-                        echo "$SECRET_TEXT"
-                    '''
-               }
+                 
 
-               // This is accessing credential of type secret file
-                withCredentials([file(credentialsId: 'Secret_file', variable: 'FILE_PATH')]) {
-                    echo "$FILE_PATH"
+                  //third credential (SECRETE file)
+                  //This is accessing credential of type Secrete file 
+                withCredentials(file[(credentialsId: 'Secret_file', variable: 'File_path')]) {
+                   echo "$File_path"
                     sh '''
-                        cat "$FILE_PATH"
-                    '''
-               }
+                    echo "$File_path"
+                     '''                  
+                }
 
-                // This is accessing credential of type SSH username with private key
-                withCredentials([sshUserPrivateKey(credentialsId: 'SSH_KEY', usernameVariable: 'USER', keyFileVariable: 'SSH_KEY')]) {
-                    echo "$USER $SSH_KEY"
+                
+                 // Fourth Credeential (SSH UN & Private key)
+                 //This is accessing credential of type SSH username & private key 
+                withCredentials(sshUserPrivateKey[(credentialsId: 'SSH_KEY', usernameVariable: 'USER', keyFileVariable: 'SSH_Key')]) {
+                   echo "$USER $SSH_Key"
                     sh '''
-                        echo "$USER $SSH_KEY"
-                    '''
-               }
+                    echo "$USER  $SSH_Key"
+                     ''' 
+                }
+
+               
+
+                
+            
             }
-        }
+        }    
     }
 }
