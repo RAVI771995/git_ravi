@@ -26,7 +26,7 @@ pipeline {
 
                   //third credential (SECRETE file)
                   //This is accessing credential of type Secrete file 
-                withCredentials(file[(credentialsId: 'Secret_file', variable: 'File_path')]) {
+                withCredentials([file(credentialsId: 'Secret_file', variable: 'File_path')]) {
                    echo "$File_path"
                     sh '''
                       echo "$File_path"
