@@ -5,10 +5,10 @@ pipeline {
         stage('CREDS') {
             steps {
                // This is accessing credential of type username and password
-               withCredentials([usernamePassword(credentialsId: 'test_up', usernameVariable: 'USERNAME', passwordVariable: 'PASS')]) {
-                    echo "$USERNAME $PASS"
+               withCredentials([usernamePassword(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
+                    echo "$USER_NAME $PASS"
                     sh '''
-                        echo "$USERNAME $PASS"
+                        echo "$USER_NAME $PASS"
                     '''
                }
 
