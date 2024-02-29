@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run SSH Command on Remote Server') {
+            steps {
+                script {
+                    // Assuming 'deploy-dev' is the ID of your SSH credentials in Jenkins
+                    sshagent(credentials: ['SSH_PEM']) {
+                        // Replace '192.168.1.106' with the actual IP or hostname of your remote server
+                        sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 13.235.9.197 uname -a'
+                    }
+                }
+            }
+        }
+
+        // Add more stages as needed
+    }
+}
