@@ -17,9 +17,9 @@ pipeline {
                 //This is accessing credential of type Secrete text 
                  
                     withCredentials([string(credentialsId: 'Secrete_text', variable:'secret_text')]) {
-                        echo "$Secrete_text"
+                        echo "$secrete_text"
                         sh '''
-                           echo "$Secrete_text"
+                           echo "$secrete_text"
                         '''
                     }
                  
@@ -36,10 +36,10 @@ pipeline {
                 
                  // Fourth Credeential (SSH UN & Private key)
                  //This is accessing credential of type SSH username & private key 
-                withCredentials([sshUserPrivateKey(credentialsId: 'SSH_KEY', usernameVariable: 'USER', keyFileVariable: 'SSH_Key')]) {
-                   echo "$USER $SSH_Key"
+                withCredentials([sshUserPrivateKey(credentialsId: 'SSH_KEY', usernameVariable: 'USER', keyFileVariable: 'SSH_key')]) {
+                   echo "$USER $SSH_key"
                     sh '''
-                    echo "$USER  $SSH_Key"
+                    echo "$USER  $SSH_key"
                      ''' 
                 }
 
