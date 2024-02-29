@@ -7,7 +7,7 @@ pipeline {
             steps {
                   // First credential (USERNAMe & Password)
                   // This is accessing credential of type username and password
-                 withCredentials(string[(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
+                 withCredentials([usernamePassword(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
                    echo "$USER_NAME $PASS"
                     sh '''
                         echo "$USER_NAME $PASS"
@@ -15,7 +15,13 @@ pipeline {
                 }
                 // Second credential (SEcreete text)
                 //This is accessing credential of type Secrete text 
-
+                 
+                withCredentials(string[(credentialsId: 'Secrete_text', variable: 'SECRET_TEXT')]) {
+                     echo "$SECRET_TEXT"
+                      sh '''
+                      echo "$SECRET_TEXT"
+                     '''
+                    }  
                  
 
                   //third credential (SECRETE file)
@@ -23,8 +29,8 @@ pipeline {
                 withCredentials(file[(credentialsId: 'Secret_file', variable: 'File_path')]) {
                    echo "$File_path"
                     sh '''
-                    echo "$File_path"
-                     '''                  
+                      echo "$File_path"
+                    '''                  
                 }
 
                 
