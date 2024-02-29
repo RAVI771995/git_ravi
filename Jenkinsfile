@@ -6,7 +6,7 @@ pipeline {
             steps {
                   // First credential (USERNAMe & Password)
                   // This is accessing credential of type username and password
-                 withCredentials(string[credentialsId: 'test_up', usernameVariable: 'USER_NAME' passwordVAriable: 'PASS']) {
+                 withCredentials(string[(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
                    echo "$USER_NAME $PASS"
                     sh '''
                         echo "$USER_NAME $PASS"
