@@ -6,18 +6,18 @@ pipeline {
             steps {
                 
                  
-             // First credential (USERNAMe & Password)
-               // This is accessing credential of type username and password
+                  // First credential (USERNAMe & Password)
+                  // This is accessing credential of type username and password
                withCredentials([usernamePassword(credentialsId: 'test_up', usernameVariable: 'USER_NAME', passwordVariable: 'PASS')]) {
                     echo "$USER_NAME $PASS"
                     sh '''
                         echo "$USER_NAME $PASS"
                     '''
-               }
+                }
                 // Second credential (SEcreete text)
                 //This is accessing credential of type Secrete text 
 
-                withCredentials(string[(credentialsId: 'Secrete_text', variable: 'SECRET_TEXT')]) {
+                 withCredentials(string[(credentialsId: 'Secrete_text', variable: 'SECRET_TEXT')]) {
                    echo "$SECRET_TEXT"
                     sh '''
                     echo "$SECRET_TEXT"
