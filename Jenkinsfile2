@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run SSH Command on Remote Server') {
             steps {
-                 sshagent(credentials: ['SSH_PEM']) {
+                 sshagent(credentialsId: ['SSH_PEM']) {
                    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 65.2.184.189 ls'
                    }
                 
