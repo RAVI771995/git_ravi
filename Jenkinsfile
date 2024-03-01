@@ -1,20 +1,26 @@
 pipeline{
-    agent {
-        label 'slave_1'
-    }
-   
+    agent none
         stages {
             stage('build') {
+                agent {
+                     label 'slave_1'
+                }
                steps {
                 sh ' sleep 5 ; ls'
                }
             }
             stage('build_11') {
+                agent {
+                        label 'slave_2'
+                       }
                steps {
-                sh ' sleep 15 '
+                sh ' sleep 10 '
                }
             }
              stage('test') {
+                agent {
+                       label 'slave_1'
+                 }
                steps {
                 sh '''
                 #!/bin/bash
@@ -22,13 +28,10 @@ pipeline{
                  sleep 10
                  '''
                }
-                   }
-              stage('test22') {
-               steps {
-                sh ' sleep 15 '
-               }
-            
+                   
+              
+            }   
         
-            }
+            
         }
 }
