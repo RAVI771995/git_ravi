@@ -7,7 +7,7 @@ pipeline {
                 script {
                     sshagent(['SSH_PEM']) {
                         // Your SSH commands go here
-                        sh 'ssh -o StrictHostKeyChecking=no -l cloudbees your-remote-host uname -a'
+                        sh 'ssh -i SSH_PEM ubuntu@65.2.184.189 '
                     }
                 }
             }
