@@ -6,15 +6,15 @@ pipeline{
         stages {
             stage('build') {
                steps {
-                sh ' sleep 5 '
+                sh ' sleep 5 ; ls'
                }
+            }
             stage('build_11') {
                steps {
                 sh ' sleep 15 '
                }
             }
              stage('test') {
-
                steps {
                 sh '''
                 #!/bin/bash
