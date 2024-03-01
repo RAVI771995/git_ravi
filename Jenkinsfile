@@ -1,27 +1,31 @@
 pipeline{
-    agent none
+    agent any
+    environment {
+        TEST_1 = "test_env no .1"
+        TEST_2 = "test_env no .2"
+        TEST_3 = "test_env no .3"
+        
+    }
         stages {
             stage('build') {
-                agent {
-                     label 'slave_1'
-                }
                steps {
-                sh ' sleep 5 ; ls'
+                sh '''
+                echo $TEST -------$TEST_1
+                sleep 5 ; ls'
+               '''
                }
             }
             stage('build_11') {
-                agent {
-                        label 'slave_2'
-                       }
                steps {
-                sh ' sleep 10 '
+                sh '''
+                echo $TEST_2 -------$TEST_3
+                 sleep 10 '
+               '''
                }
             }
-             stage('test') {
-                agent {
-                       label 'slave_1'
-                 }
+             stage('test') {  
                steps {
+                echo $TEST_1 -------$TEST_2
                 sh '''
                 #!/bin/bash
                  ls -lrt
