@@ -25,10 +25,9 @@ pipeline{
             }
              stage('test') {  
                steps {
-                echo $TEST_1 -------$TEST_2
+                
                 sh '''
-                #!/bin/bash
-                 ls -lrt
+                 echo $TEST_1 -------$TEST_2
                  sleep 10
                  '''
                }
