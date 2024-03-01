@@ -1,9 +1,9 @@
 pipeline{
     agent any
         environment {
-        TEST_1 = "test_env no .1"
-        TEST_2 = "test_env no .2"
-        TEST_3 = "test_env no .3"  
+        TEST_1 = "test_env no.1"
+        TEST_2 = "test_env no.2"
+        TEST_3 = "test_environment no.3"  
           }
         stages {
             stage('build') {
@@ -17,18 +17,19 @@ pipeline{
             stage('build_11') {
                steps {
                 sh '''
-                echo $TEST_2 -------$TEST_3
+                echo $TEST_2 -------$TEST_2
                  sleep 10 
                '''
                }
             }
              stage('test') {  
                steps {
+                script {
+
+                    echo "${TEST_3}"
+                }
                 
-                sh '''
-                 echo $TEST_1 -------$TEST_2
-                 sleep 10
-                 '''
+               
                }
                    
               
