@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        string(name: 'PARAM_String', defaultValue: 'input param', descrption:'this is the value of param')
+        string(name: 'PARAM_String', defaultValue: 'input_param', description:'this is the value of param')
 
     }
         
