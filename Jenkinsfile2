@@ -7,8 +7,8 @@ pipeline {
                  sshagent (credentials: ['pem_key1']) {
                    sh '''
                    ssh -o StrictHostKeyChecking=no -l ubuntu 43.205.203.235
-                  ls -lrt 
-                  tree | tail -1  
+                   tree | tail -1  
+                   ls -lrt
                    uname -a
                    '''
                    }
