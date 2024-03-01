@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        validatingString(name: 'PARAM_String', defaultValue: 'param', descrption:'display the parameter')
+        string(name: 'PARAM_String', defaultValue: 'this the parameter value', descrption:'display the parameter')
 
     }
         
@@ -21,17 +21,13 @@ pipeline{
                '''
                }
             }
-             stage('test') {  
-               steps {
-                script {
-
-                }
+             
                 
                
-               }
+               
                    
               
-            }   
+               
         
             
         }
