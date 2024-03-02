@@ -10,14 +10,13 @@ pipeline{
         stages {
             stage('build') {
                steps {
-                bat
                 sh '''
                 echo " PARAM_STRING :--   $PARAM_String "
                 echo " bIOGRAPHY :--   $BIOGRAPHY "
                 echo "tOOGLE :---     $TOOGLE"
                 echo "cHOICE :--   $CHOICE"
                 sleep 5 ; ls
-               '''
+                 '''
                }
             }
             
