@@ -10,6 +10,7 @@ pipeline{
         stages {
             stage('build') {
                steps {
+                bat
                 sh '''
                 echo " PARAM_STRING :--   $PARAM_String "
                 echo " bIOGRAPHY :--   $BIOGRAPHY "
