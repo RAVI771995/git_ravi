@@ -8,7 +8,16 @@ pipeline{
     }
         
         stages {
-            
+            stage('build') {
+               steps {
+                sh '''
+                echo " PARAM_STRING :--   $PARAM_String "
+                echo " bIOGRAPHY :--   $BIOGRAPHY "
+                echo "tOOGLE :---     $TOOGLE"
+                echo "cHOICE :--   $CHOICE"
+                sleep 5 ; ls
+               '''
+               }
             
             stage('build_11') {
                steps {
