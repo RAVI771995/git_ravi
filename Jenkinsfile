@@ -5,7 +5,7 @@ pipeline{
          text(name: 'BIOGRAPHY', defaultValue: 'Please enter some thins', description: 'Enter some information about the person') 
          booleanParam(name: 'TOOGLE', defaultValue: true, description: 'true or false') 
           choice(name: 'CHOICE', choices: ['drinks', 'vegetables', 'fruits'], description: 'select something int he choice')
-    }
+               }
         
         stages {
             stage('build') {
@@ -18,6 +18,7 @@ pipeline{
                 sleep 5 ; ls
                '''
                }
+            }
             
             stage('build_11') {
                steps {
@@ -30,7 +31,7 @@ pipeline{
                 }
                }
             }
-    
-            
         }
+            
+        
 }
