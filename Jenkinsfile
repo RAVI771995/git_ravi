@@ -2,8 +2,8 @@ pipeline{
     agent any
 
      triggers {
-        cron (*/59 * * * *)
-     }
+        cron ( '*/59 * * * * ')
+          }
     parameters{
          string(name: 'PARAM_String', defaultValue: 'input_param', description:'this is the value of param')
          text(name: 'BIOGRAPHY', defaultValue: 'Please enter some thins', description: 'Enter some information about the person') 
