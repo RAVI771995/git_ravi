@@ -24,6 +24,7 @@ pipeline{
             }
         }
         stage ( 'check files') {
+            agent any 
             steps {
                 sh "whoami ; du -h;"
             }
