@@ -1,0 +1,22 @@
+pipeline{
+    agent any 
+
+    
+    stages{
+        stage(build) {
+             steps {
+                sh '''
+                pwd
+                ls -lrt
+                '''
+        }
+        stage(testing) {
+            steps{
+                "sleep 10"
+                sh "df -h"
+            }
+        }
+    }    
+    
+}
+}
