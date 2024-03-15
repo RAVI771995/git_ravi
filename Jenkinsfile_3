@@ -6,9 +6,8 @@ pipeline{
 
     stages {
         stage ('build') {
-            agent{
-                 label 'slave'
-            }
+            
+            
              steps {
                 sh '''
                 pwd
@@ -17,7 +16,7 @@ pipeline{
             }
         }
          stage ('testing') {
-            agent any
+            
             steps {
                 sh '''
                 df -h 
