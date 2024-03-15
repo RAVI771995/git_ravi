@@ -17,6 +17,11 @@ pipeline{
                 '''
             }
         }
+        stage ( 'check files') {
+            steps {
+                sh "whoami ; du -h;"
+            }
+        }
     }    
     
 }
