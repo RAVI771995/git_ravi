@@ -3,6 +3,10 @@ pipeline {
     stages{
         stage () {
             step{
+                sh '''
+                ls -lrt
+                
+                '''
                 
             }
         }
