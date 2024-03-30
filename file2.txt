@@ -9,7 +9,7 @@ pipeline {
                 whoami 
                 which jenkins
                 df -h
-                du -h
+                du 
                 '''
                 
             }
