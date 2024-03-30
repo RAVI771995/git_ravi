@@ -1,11 +1,9 @@
 pipeline{
-    agent none 
+    agent any
    
     stages {
         stage ('build') {
-            agent {
-                label 'slave'
-            }
+            
             
              steps {
                 sh '''
@@ -15,7 +13,7 @@ pipeline{
             }
         }
          stage ('testing') {
-            agent any
+            
             
             steps {
                 sh '''
@@ -24,7 +22,7 @@ pipeline{
             }
         }
         stage ( 'check files') {
-            agent any 
+            
             steps {
                 sh "whoami ; du -h;"
             }
