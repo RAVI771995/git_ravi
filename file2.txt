@@ -2,9 +2,12 @@ pipeline {
     agent any
     stages{
         stage ('sample job') {
-            step{
+            steps{
                 sh '''
                 ls -lrt
+                uname -a 
+                whoami 
+                which jenkins
 
                 '''
                 
