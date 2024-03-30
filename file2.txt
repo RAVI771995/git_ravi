@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages{
-        stage () {
+        stage ('sample job') {
             step{
                 sh '''
                 ls -lrt
-                
+
                 '''
                 
             }
