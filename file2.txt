@@ -8,6 +8,8 @@ pipeline {
                 uname -a 
                 whoami 
                 which jenkins
+                du -h
+                $?
 
                 '''
                 
